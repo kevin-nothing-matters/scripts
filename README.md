@@ -6,9 +6,7 @@ description. Python 3.10+, NumPy, SciPy.
 
 ## Setup
 
-```bash
 pip install numpy scipy
-```
 
 Monte Carlo scripts at depth ≥ 50 benefit from multiple cores.
 Per-script flags are documented at the top of each file.
@@ -39,6 +37,15 @@ the MPDO transfer architecture. Runtime: minutes.
 Tests the first-law identity δ⟨H⟩/δS = 1 at k = 1, 2, 3 using the
 modular Hamiltonian proxy H = −log ρ_A. Reproduces the first-law
 theorem of Paper 2. Runtime: minutes.
+
+### `selberg_renyi.py`
+Numerical evidence bearing on the open Lemma D conjecture. Runs
+N = 2000 Haar-random trees at depth D = 20 and samples the quenched
+Rényi-q entropy at m = 0.9 and m = 1.1 (the two q-derivatives flanking
+the von Neumann limit q → 1), testing whether the averaged slope
+converges to the predicted target m² · ln(5/2) with m² = 3/10.
+Runtime: ~24 hours at N = 2000; use `--n-trees 200` for a quick
+check in roughly two hours.
 
 ## Reproducibility policy
 
